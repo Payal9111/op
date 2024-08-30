@@ -19,7 +19,8 @@ under the License.
 -->
 
 <site-conf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns="http://ofbiz.apache.org/Site-Conf" xsi:schemaLocation="http://ofbiz.apache.org/Site-Conf http://ofbiz.apache.org/dtds/site-conf.xsd">
+           xmlns="http://ofbiz.apache.org/Site-Conf"
+           xsi:schemaLocation="http://ofbiz.apache.org/Site-Conf http://ofbiz.apache.org/dtds/site-conf.xsd">
     <!-- The controller elements that are common to all OFBiz components
          can be found in the following xml file. A component can override the
          elements found in the common-controller.xml file. -->
@@ -40,14 +41,20 @@ under the License.
     -->
 
     <!-- Request Mappings -->
-    <request-map uri="main"><security https="true" auth="true"/><response name="success" type="view" value="main"/></request-map>
+    <request-map uri="main">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="main"/>
+    </request-map>
 
-    <request-map uri="FindOfbizDemo"><security https="true" auth="true"/><response name="success" type="view" value="FindOfbizDemo"/></request-map>
-<!--    <request-map uri="createOfbizDemo">-->
-<!--        <security https="true" auth="true"/>-->
-<!--        <event type="service" invoke="createOfbizDemoByGroovyService"/>-->
-<!--        <response name="success" type="view" value="main"/>-->
-<!--    </request-map>-->
+    <request-map uri="FindOfbizDemo">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="FindOfbizDemo"/>
+    </request-map>
+    <!--    <request-map uri="createOfbizDemo">-->
+    <!--        <security https="true" auth="true"/>-->
+    <!--        <event type="service" invoke="createOfbizDemoByGroovyService"/>-->
+    <!--        <response name="success" type="view" value="main"/>-->
+    <!--    </request-map>-->
     <request-map uri="createOfbizDemoByJavaService">
         <security https="true" auth="true"/>
         <event type="service" invoke="createOfbizDemoByJavaService"/>
@@ -66,16 +73,37 @@ under the License.
         <response name="success" type="view" value="AddOfbizDemoFtl"/>
     </request-map>
 
+
+    <request-map uri="PylLogin">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="PylLogin"/>
+    </request-map>
+
+
+
+
+    <request-map uri="payallogin">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="Success"/>
+    </request-map>
+
+
+
     <!--    <request-map uri="createOfbizDemo">-->
-<!--        <security https="true" auth="true"/>-->
-<!--        <event type="service" invoke="createOfbizDemo"/>-->
-<!--        <response name="success" type="view" value="main"/>-->
-<!--    </request-map>-->
+    <!--        <security https="true" auth="true"/>-->
+    <!--        <event type="service" invoke="createOfbizDemo"/>-->
+    <!--        <response name="success" type="view" value="main"/>-->
+    <!--    </request-map>-->
     <!-- View Mappings -->
     <view-map name="main" type="screen" page="component://ofbizdemo/widget/OfbizdemoScreens.xml#main"/>
+    <view-map name="PylLogin" type="screen" page="component://ofbizdemo/widget/OfbizdemoScreens.xml#PylLogin"/>
 
-    <view-map name="FindOfbizDemo" type="screen" page="component://ofbizdemo/widget/OfbizdemoScreens.xml#FindOfbizDemo"/>
-    <view-map name="AddOfbizDemoFtl" type="screen" page="component://ofbizdemo/widget/OfbizdemoScreens.xml#AddOfbizDemoFtl"/>
+    <view-map name="Success" type="screen" page="component://ofbizdemo/widget/OfbizdemoScreens.xml#success"/>
+
+    <view-map name="FindOfbizDemo" type="screen"
+              page="component://ofbizdemo/widget/OfbizdemoScreens.xml#FindOfbizDemo"/>
+    <view-map name="AddOfbizDemoFtl" type="screen"
+              page="component://ofbizdemo/widget/OfbizdemoScreens.xml#AddOfbizDemoFtl"/>
 
 
 </site-conf>
